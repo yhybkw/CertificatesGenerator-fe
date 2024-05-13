@@ -9,6 +9,7 @@ import { ViewCandidateComponent } from './view-candidate/view-candidate.componen
 import { UpdateCandidateComponent } from './update-candidate/update-candidate.component';
 import { ImportListComponent } from './import-list/import-list.component';
 import { CertificateCentreComponent } from './certificate-centre/certificate-centre.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CertificateCentreComponent } from './certificate-centre/certificate-cen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

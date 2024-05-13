@@ -10,6 +10,7 @@ import { UpdateCandidateComponent } from './update-candidate/update-candidate.co
 import { ImportListComponent } from './import-list/import-list.component';
 import { CertificateCentreComponent } from './certificate-centre/certificate-centre.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

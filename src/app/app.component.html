@@ -1,18 +1,17 @@
 <nav class="navbar navbar-expand-sm bg-success navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a routerLink="list" routerLinkActive="active" class="nav-link">List</a>
+      <a routerLink="list" routerLinkActive="active" class="nav-link" style="margin-left: 10px;">List</a>
     </li>
     <!-- <li class="nav-item">
       <a routerLink="add" routerLinkActive="active" class="nav-link">Add Candidate</a>
     </li> -->
+    <li>
+      <button class="btn btn-outline-info float-right" (click)="popup()"style="margin-left: 10px;">Add Candidate</button>
+    </li>
   </ul>
 </nav>
-<div class="row">
-  <div>
-    <button class="btn btn-success float-right" style="margin: 10px;" (click)="popup()" >Add Candidate</button>
-  </div>
-</div>
+
 <p class="fs-3">Salam World! this is {{ title | titlecase }}</p>
 <div class="container">
   <router-outlet></router-outlet>

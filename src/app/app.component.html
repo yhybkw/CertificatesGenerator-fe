@@ -36,7 +36,7 @@
       <div class="modal-body">
 
 
-
+<!-- body  -->
         <form (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label> First Name</label>
@@ -59,9 +59,9 @@
             <label> Diploma </label>
             <input type="text" class="form-control" id="diploma" [(ngModel)]="candidate.diploma" name="diploma">
           </div>
-          <button class="btn btn-info" type="submit" style="margin-top: 10px;"> Add </button>
+          <button class="btn btn-info" type="submit" style="margin-top: 10px;" (click)="closePopup()"> Add </button>
         </form>
-
+<!-- body -->
 
 
       </div>

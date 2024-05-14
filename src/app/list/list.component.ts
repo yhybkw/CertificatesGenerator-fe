@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Candidate } from '../candidate';
 import { CandidateService } from '../candidate.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -11,19 +12,58 @@ export class ListComponent implements OnInit {
 
   candidates: Candidate[];
 
-  constructor(private candidateService: CandidateService){
+  // updateCandidate
+  candidateId: number;
+  candidate: Candidate = new Candidate();
 
-  }
+  constructor(private candidateService: CandidateService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
-    this.getList();
-    
+    this.getCandidates();
+
+    // updateCandidate
+    this.candidateId = this.candidate.candidateId;
+    this.candidateService.getCandidateById(this.candidateId).subscribe(data => {
+      this.candidate = data;
+    }, error => console.log(error));
   }
 
-  getList(){
+  private getCandidates() {
     this.candidateService.getList().subscribe(data => {
       this.candidates = data;
     });
   }
 
+  updateCandidate(candidateId: number) {
+    this.router.navigate(['update', candidateId]);
+  }
+
+  
+    // updateCandidate Modal
+  popup2() {
+    const modalDiv = document.getElementById('Modal2')
+    if (modalDiv != null) {
+      modalDiv.style.display = 'block'
+    }
+  }
+
+  closePopup2() {
+    const modalDiv = document.getElementById('Modal2')
+    if (modalDiv != null) {
+      modalDiv.style.display = 'none'
+    }
+  }
+
+  onSubmit2() {
+    this.candidateService.updateCandidate(this.candidateId, this.candidate).subscribe(data => {
+      this.goToCandidateList();
+    }
+      , error => console.log(error));
+  }
+  goToCandidateList() {
+    this.router.navigate(['/list'])
+  }
 }

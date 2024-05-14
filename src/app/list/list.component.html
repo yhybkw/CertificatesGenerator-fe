@@ -1,13 +1,14 @@
-<h4>Final Final List</h4>
+<h5>List of Candidates to get certificate</h5>
 
-<table class = "table table-striped">
-    <thead>
+<table class = "table table-striped table-light table-hover table-bordered ">
+    <thead class="table-info">
         <tr>
             <th> First Name</th>
             <th> Last Name </th>
             <th> Email </th>
             <th> City </th>
             <th> Diploma </th>
+            <th> University </th>
             <th> Actions </th>
         </tr>
     </thead>
@@ -18,11 +19,62 @@
             <td> {{ candidate.email }} </td>
             <td> {{ candidate.city }} </td>
             <td> {{ candidate.diploma }} </td>
-            <!-- <td>
-                <button (click) = "updateEmployee(employee.id)" class = "btn btn-info"> Update</button>
-                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "employeeDetails(employee.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
-            </td> -->
+            <td> {{ candidate.university }} </td>
+            <td>
+                <button class="btn btn-outline-dark btn-sm" (click)="popup2()">Update 1</button>
+                <button (click) = "updateCandidate(candidate.candidateId)" class = "btn btn-dark btn-sm" style="margin-left: 10px;"> Update 2 </button>
+                <!-- <button (click) = "deleteCandidate(candidate.candidateId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "candidateDetails(candidate.candidateId)" class = "btn btn-info" style="margin-left: 10px"> View</button> -->
+            </td>
         </tr>
     </tbody>
 </table>
+
+<!--            -->
+<!-- The Modals -->
+<!--            -->
+<div class="modal" id="Modal2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Candidate</h4>
+          <button type="button" class="btn-close" (click)="closePopup2()" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+  <!-- body  -->
+  <form (ngSubmit)="onSubmit2()">
+    <div class="form-group">
+        <label> First Name</label>
+        <input type="text" class="form-control" id="firstName"
+        [(ngModel)] = "candidate.firstName" name="firstName">
+    </div>
+    <div class="form-group">
+        <label> Last Name</label>
+        <input type="text" class="form-control" id="lastName"
+        [(ngModel)] = "candidate.lastName" name="lastName">
+    </div>
+    <div class="form-group">
+        <label> Email</label>
+        <input type="text" class="form-control" id="email"
+        [(ngModel)] = "candidate.email" name="email">
+    </div>
+    <div class="form-group">
+        <label> City </label>
+        <input type="text" class="form-control" id="city"
+        [(ngModel)] = "candidate.city" name="city">
+    </div>
+    <div class="form-group">
+        <label> Diploma </label>
+        <input type="text" class="form-control" id="diploma"
+        [(ngModel)] = "candidate.diploma" name="diploma">
+    </div>
+    <button class="btn btn-success " type="submit" style="margin-top: 10px" (click)="closePopup2()"> Update </button>
+    <button type="button" class="btn btn-outline-danger" style="margin-top: 10px; margin-left: 10px;" 
+    (click)="closePopup2()" data-bs-dismiss="modal">Cancel</button>
+
+</form>
+  <!-- body -->
+        </div>
+      </div>
+    </div>
+  </div>

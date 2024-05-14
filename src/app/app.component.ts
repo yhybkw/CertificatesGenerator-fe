@@ -42,13 +42,9 @@ export class AppComponent implements OnInit {
   addCandidate(){
     this.candidateService.addCandidate(this.candidate).subscribe(data =>{
       console.log(data);
-      // this.goToCandidateList();
     },
     error => console.log(error));
   }
 
-  // goToCandidateList(){
-  //   this.router.navigate(['/list'])
-  //     }
 
 }

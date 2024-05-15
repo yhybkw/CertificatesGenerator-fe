@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Candidate } from '../candidate';
 import { CandidateService } from '../candidate.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { first } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -13,8 +14,21 @@ export class ListComponent implements OnInit {
   candidates: Candidate[];
 
   // updateCandidate
-  candidateId: number;
-  candidate: Candidate = new Candidate();
+  // candidateId: number;
+  candidateToUpdate= {
+    firstName: "",
+    lastName: "",
+    email: "",
+    city:"",
+    diploma: "",
+    university: "",
+    gender: "",
+    phoneNumber: "",
+    type: "",
+    anapec: "",
+    candidateID: 0,
+    
+  }
 
   constructor(private candidateService: CandidateService,
     private router: Router,
@@ -25,10 +39,10 @@ export class ListComponent implements OnInit {
     this.getCandidates();
 
     // updateCandidate
-    this.candidateId = this.candidate.candidateId
-    this.candidateService.getCandidateById(this.candidateId).subscribe(data => {
-      this.candidate = data;
-    }, error => console.log(error));
+    // this.candidateId = this.candidate.candidateId
+    // this.candidateService.getCandidateById(this.candidateId).subscribe(data => {
+    //   this.candidate = data;
+    // }, error => console.log(error));
   }
 
   private getCandidates() {
@@ -43,30 +57,30 @@ export class ListComponent implements OnInit {
 
   
     // updateCandidate Modal
-  popup2() {
-    const modalDiv = document.getElementById('Modal2')
-    if (modalDiv != null) {
-      modalDiv.style.display = 'block'
-    }
-  }
+  // popup2() {
+  //   const modalDiv = document.getElementById('Modal2')
+  //   if (modalDiv != null) {
+  //     modalDiv.style.display = 'block'
+  //   }
+  // }
 
-  closePopup2() {
-    const modalDiv = document.getElementById('Modal2')
-    if (modalDiv != null) {
-      modalDiv.style.display = 'none'
-    }
-  }
+  // closePopup2() {
+  //   const modalDiv = document.getElementById('Modal2')
+  //   if (modalDiv != null) {
+  //     modalDiv.style.display = 'none'
+  //   }
+  // }
 
-  onSubmit2() {
-    this.candidateService.updateCandidate(this.candidateId, this.candidate).subscribe(data => {
-      this.goToCandidateList();
-    }
-      , error => console.log(error));
-  }
+  // onSubmit2() {
+  //   this.candidateService.updateCandidate(this.candidateId, this.candidate).subscribe(data => {
+  //     this.goToCandidateList();
+  //   }
+  //     , error => console.log(error));
+  // }
 
-  goToCandidateList() {
-    this.router.navigate(['/list'])
-  }
+  // goToCandidateList() {
+  //   this.router.navigate(['/list'])
+  // }
 
   // delete candidate
    deleteCandidate(candidateId: number){
@@ -80,4 +94,42 @@ export class ListComponent implements OnInit {
    viewDetails(candidateId: number){
     this.router.navigate(['candidate', candidateId]);
   }
+
+  // others
+  notYet(){
+    alert('Not yet, be patient!' )
+  }
+  
+  popup6() {
+    const modalDiv = document.getElementById('Modal3')
+    if (modalDiv != null) {
+      modalDiv.style.display = 'block'
+    }
+    
+  }
+  closePopup6() {
+    const modalDiv = document.getElementById('Modal3')
+    if (modalDiv != null) {
+      modalDiv.style.display = 'none'
+    }
+  }
+
+  onSubmit6(){
+
+  }
+
+  edit(candidate){
+    this.candidateToUpdate = candidate
+  }
+
+  modifyCandidate(){
+    this.candidateService.modifyCandidate(this.candidateToUpdate).subscribe(
+      (resp) => {
+        console.log(resp)
+      },
+      (err) => { console.log(err)}
+    );
+  }
+
+
 }

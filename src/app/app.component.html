@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a routerLink="list" routerLinkActive="active" class="nav-link" style="margin-left: 10px;">List</a>
+      <a routerLink="list" routerLinkActive="active" class="nav-link" style="margin-left: 20px;">List</a>
     </li>
     <li>
       <button class="btn btn-outline-light float-right" 
-      (click)="popup()" style="margin-left: 10px;">Add Candidate</button>
+      (click)="popup()" style="margin-left: 10px;"><i class="fa-solid fa-plus" style="margin-right: 1px;"></i>Add Candidate</button>
     </li>
   </ul>
 </nav>
 
-<p class="fs-3">Salam World! this is {{ title | titlecase }}</p>
+<p class="fs-4" style="margin-left: 20px; margin-top: 10px;">Salam World! this is {{ title | titlecase }}</p>
 <div class="container">
   <router-outlet></router-outlet>
 </div>

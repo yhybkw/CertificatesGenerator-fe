@@ -37,5 +37,9 @@ export class CandidateService {
   deleteCandidate(candidateId: number): Observable<Object>{
     return this.httpClient.delete(`${this.deleteUrl}/${candidateId}`)
   };
+
+  modifyCandidate(candidate){
+    return this.httpClient.put('this.updateUrl', candidate)
+  }
   
 }

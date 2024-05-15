@@ -75,4 +75,9 @@ export class ListComponent implements OnInit {
       this.getCandidates();
     })
    }
+
+   // show details of a candidate
+   viewDetails(candidateId: number){
+    this.router.navigate(['candidate', candidateId]);
+  }
 }

@@ -1,1 +1,34 @@
-<p>view-candidate works!</p>
+<h5>Seems you are looking for details you little meddlesome</h5>
+<h6>All right here are the details of </h6>
+<div class="col-md-3 offset-md-0 rounded-3" style="background-color:rgb(112, 158, 112); padding: 20px;">
+    <div *ngIf="candidate">
+        <label><b>First Name: </b></label> {{ candidate.firstName }}
+    </div>
+    <div>
+        <label><b>Last Name: </b></label> {{ candidate.lastName }}
+    </div>
+    <div>
+        <label><b>Sex: </b></label> {{ candidate.gender }}
+    </div>
+    <div>
+        <label><b>City: </b></label> {{ candidate.city }}
+    </div>
+    <div>
+        <label><b>Email: </b></label> {{ candidate.email }}
+    </div>
+    <div>
+        <label><b>Phone: </b></label> {{ candidate.phoneNumber }}
+    </div>
+    <div>
+        <label><b>Diploma </b></label> {{ candidate.diploma }}
+    </div>
+    <div>
+        <label><b>University: </b></label> {{ candidate.university }}
+    </div>
+    <div>
+        <label><b>Anapec: </b></label> {{ candidate.anapec }}
+    </div>
+    <div>
+        <label><b>Type: </b></label> {{ candidate.type }}
+    </div>
+</div>

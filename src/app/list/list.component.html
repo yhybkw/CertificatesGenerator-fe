@@ -1,6 +1,6 @@
-<h5>List of Candidates to get certificate</h5>
+<h5 style="margin-bottom: 20px;">List of Candidates to get certificate</h5>
 
-<table class = "table table-striped table-light table-hover table-bordered ">
+<table class = "table table-striped table-light table-hover">
     <thead class="table-info">
         <tr>
             <!-- <th> Id </th> -->
@@ -23,10 +23,10 @@
             <td> {{ candidate.diploma }} </td>
             <td> {{ candidate.university }} </td>
             <td>
-                <button class="btn btn-outline-dark btn-sm" (click)="popup2()">Update 1</button>
-                <button (click) = "updateCandidate(candidate.candidateId)" class = "btn btn-dark btn-sm" style="margin-left: 10px;"> Update 2 </button>
-                <button (click) = "deleteCandidate(candidate.candidateId)" class = "btn btn-danger btn-sm" style="margin-left: 10px"> Delete</button>
-                <!-- <button (click) = "candidateDetails(candidate.candidateId)" class = "btn btn-info" style="margin-left: 10px"> View</button> -->
+                <button (click)="popup2()" class = "btn btn-outline-success btn-sm"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button (click) = "updateCandidate(candidate.candidateId)" class = "btn btn-success btn-sm" style="margin-left: 10px;"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button (click) = "deleteCandidate(candidate.candidateId)" class = "btn btn-danger btn-sm" style="margin-left: 10px" ><i class="fa-solid fa-trash"></i></button>
+                <button (click) = "viewDetails(candidate.candidateId)" class = "btn btn-outline-dark btn-sm" style="margin-left: 10px"><i class="fa-solid fa-circle-info"></i></button>
             </td>
         </tr>
     </tbody>
@@ -75,6 +75,7 @@
     (click)="closePopup2()" data-bs-dismiss="modal">Cancel</button>
 
 </form>
+<!-- <app-update-candidate></app-update-candidate> -->
   <!-- body -->
         </div>
       </div>

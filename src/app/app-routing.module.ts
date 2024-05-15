@@ -7,7 +7,7 @@ import { UpdateCandidateComponent } from './update-candidate/update-candidate.co
 const routes: Routes = [
   {path: 'list', component : ListComponent},
   {path: '', redirectTo: 'list', pathMatch:'full'},
-  {path: 'add', component: AddCandidateComponent},
+  // {path: 'add', component: AddCandidateComponent},
   {path: 'update/:candidateId', component: UpdateCandidateComponent}
 ];
 

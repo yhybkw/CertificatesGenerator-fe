@@ -25,7 +25,7 @@ export class ListComponent implements OnInit {
     this.getCandidates();
 
     // updateCandidate
-    this.candidateId = this.candidate.candidateId;
+    this.candidateId = this.candidate.candidateId
     this.candidateService.getCandidateById(this.candidateId).subscribe(data => {
       this.candidate = data;
     }, error => console.log(error));
@@ -63,7 +63,16 @@ export class ListComponent implements OnInit {
     }
       , error => console.log(error));
   }
+
   goToCandidateList() {
     this.router.navigate(['/list'])
   }
+
+  // delete candidate
+   deleteCandidate(candidateId: number){
+    this.candidateService.deleteCandidate(candidateId).subscribe(data =>{
+      console.log(data);
+      this.getCandidates();
+    })
+   }
 }

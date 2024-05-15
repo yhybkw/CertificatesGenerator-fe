@@ -3,6 +3,7 @@
 <table class = "table table-striped table-light table-hover table-bordered ">
     <thead class="table-info">
         <tr>
+            <!-- <th> Id </th> -->
             <th> First Name</th>
             <th> Last Name </th>
             <th> Email </th>
@@ -14,6 +15,7 @@
     </thead>
     <tbody>
         <tr *ngFor = "let candidate of candidates" >
+            <!-- <td> {{ candidate.candidateId }} </td> -->
             <td> {{ candidate.firstName }} </td>
             <td> {{ candidate.lastName }} </td>
             <td> {{ candidate.email }} </td>
@@ -23,8 +25,8 @@
             <td>
                 <button class="btn btn-outline-dark btn-sm" (click)="popup2()">Update 1</button>
                 <button (click) = "updateCandidate(candidate.candidateId)" class = "btn btn-dark btn-sm" style="margin-left: 10px;"> Update 2 </button>
-                <!-- <button (click) = "deleteCandidate(candidate.candidateId)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-                <button (click) = "candidateDetails(candidate.candidateId)" class = "btn btn-info" style="margin-left: 10px"> View</button> -->
+                <button (click) = "deleteCandidate(candidate.candidateId)" class = "btn btn-danger btn-sm" style="margin-left: 10px"> Delete</button>
+                <!-- <button (click) = "candidateDetails(candidate.candidateId)" class = "btn btn-info" style="margin-left: 10px"> View</button> -->
             </td>
         </tr>
     </tbody>

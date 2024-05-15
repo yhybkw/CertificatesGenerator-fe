@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'Certificates Generator';
 
   candidate: Candidate = new Candidate();
+  candidates: Candidate[];
 
   constructor(private candidateService: CandidateService,
     private router: Router
@@ -37,14 +38,26 @@ export class AppComponent implements OnInit {
   onSubmit(){
     console.log(this.candidate);
     this.addCandidate();
+    this.goToCandidateList();
   }
 
   addCandidate(){
     this.candidateService.addCandidate(this.candidate).subscribe(data =>{
       console.log(data);
+      this.getCandidates();
     },
     error => console.log(error));
   }
+
+  private getCandidates() {
+    this.candidateService.getList().subscribe(data => {
+      this.candidates = data;
+    });
+  }
+
+  goToCandidateList(){
+    this.router.navigate(['/list'])
+      }
 
 
 }

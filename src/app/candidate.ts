@@ -7,7 +7,7 @@ export class Candidate {
     gender: string;
     phoneNumber: string;
     country: string;
-    anapec: string;
+    date: string;
     diploma: string;
     university: string;
     type: string;

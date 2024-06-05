@@ -1,32 +1,64 @@
-<nav class="navbar navbar-expand-sm bg-success navbar-dark">
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(23,61,102);">
   <ul class="navbar-nav">
     <li class="nav-item">
-      <a routerLink="list" routerLinkActive="active" class="nav-link">List</a>
+      <a routerLink="home" routerLinkActive="active" class="nav-link" style="margin-left: 20px;">
+        <i class="fa-solid fa-house" style="margin-right: 10px;"></i>Home</a>
     </li>
-    <!-- <li class="nav-item">
-      <a routerLink="add" routerLinkActive="active" class="nav-link">Add Candidate</a>
-    </li> -->
+    <li class="nav-item">
+      <a routerLink="list" routerLinkActive="active" class="nav-link" style="margin-left: 20px;">
+        <i class="fa-solid fa-certificate" style="margin-right: 10px;"></i>Certificate Generator</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="about" routerLinkActive="active" class="nav-link" style="margin-left: 20px;">
+        <i class="fa-solid fa-file-invoice" style="margin-right: 10px;"></i>About</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="report" routerLinkActive="active" class="nav-link" style="margin-left: 20px;">
+        <i class="fa-solid fa-file" style="margin-right: 10px;"></i>Report</a>
+    </li>
   </ul>
 </nav>
-<div class="row">
-  <div>
-    <button class="btn btn-success float-right" style="margin: 10px;" (click)="popup()" >Add Candidate</button>
-  </div>
-</div>
-<p class="fs-3">Salam World! this is {{ title | titlecase }}</p>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
 
-<footer class="footer">
+<!-- Side Nav -->
+<!-- <nav class="vertical-nav">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a routerLink="list" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-house" style="margin-left: 10px;"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="about" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-file-invoice" style="margin-left: 10px;"></i>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="report" routerLinkActive="active" class="nav-link">
+        <i class="fa-solid fa-file" style="margin-left: 10px;"></i>
+      </a>
+    </li>
+  </ul>
+</nav> -->
+<!-- Side Nav -->
+<!-- <main style="margin-top: 58px;"> -->
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+<!-- </main> -->
+
+<!-- <div class="container">
+
+</div> -->
+
+<!-- <footer class="footer">
   <div class="container">
     <span> demo app </span>
   </div>
-</footer>
+</footer> -->
 <!--            -->
 <!-- The Modals -->
 <!--            -->
-<div class="modal" id="myModal">
+<!-- <div class="modal" id="myModal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -34,22 +66,26 @@
         <button type="button" class="btn-close" (click)="closePopup()" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body">
-
-
-<!-- body  -->
         <form (ngSubmit)="onSubmit()">
           <div class="form-group">
             <label> First Name</label>
-            <input type="text" class="form-control" id="firstName" 
-            [(ngModel)]="candidate.firstName" name="firstName">
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="candidate.firstName" name="firstName">
           </div>
           <div class="form-group">
             <label> Last Name</label>
             <input type="text" class="form-control" id="lastName" [(ngModel)]="candidate.lastName" name="lastName">
           </div>
           <div class="form-group">
+            <label> Gender </label>
+            <input type="text" class="form-control" id="gender" [(ngModel)]="candidate.gender" name="gender">
+          </div>
+          <div class="form-group">
             <label> Email</label>
             <input type="text" class="form-control" id="email" [(ngModel)]="candidate.email" name="email">
+          </div>
+          <div class="form-group">
+            <label> Phone </label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="candidate.phoneNumber" name="phone">
           </div>
           <div class="form-group">
             <label> City </label>
@@ -59,15 +95,23 @@
             <label> Diploma </label>
             <input type="text" class="form-control" id="diploma" [(ngModel)]="candidate.diploma" name="diploma">
           </div>
-          <button class="btn btn-info" type="submit" style="margin-top: 10px;" (click)="closePopup()"> Add </button>
+          <div class="form-group">
+            <label> University </label>
+            <input type="text" class="form-control" id="university" [(ngModel)]="candidate.university"
+              name="university">
+          </div>
+          <div class="form-group">
+            <label> Type </label>
+            <input type="text" class="form-control" id="type" [(ngModel)]="candidate.type" name="type">
+          </div>
+          <div class="form-group">
+            <label> Date </label>
+            <input type="text" class="form-control" id="date" [(ngModel)]="candidate.date" name="date">
+          </div>
+          <button class="btn btn-success" type="submit" style="margin-top: 10px;" (click)="closePopup()"> Add </button>
+          <button type="button" class="btn btn-outline-danger" style="margin-top: 10px; margin-left: 10px;" (click)="closePopup()" data-bs-dismiss="modal"> Cancel </button>
         </form>
-<!-- body -->
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" (click)="closePopup()" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
-</div>
+</div> -->

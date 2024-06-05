@@ -1,0 +1,65 @@
+/* src/app/components/student-list/student-list.component.css */
+.certificate-template {
+    width: 800px;
+    height: 600px;
+    /* padding: 50px; */
+    text-align: center;
+    border: 20px solid #050f66;
+    display: none; 
+    box-sizing: border-box;
+    background-color: #fafaf2; 
+    font-family: Arial, sans-serif; 
+  }
+  
+  .certificate-template h1 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+  
+  .certificate-template h2 {
+    font-size: 40px;
+    /* text-decoration-line: underline; */
+  }
+  
+  .certificate-template h3 {
+    font-size: 30px;
+  }
+  
+  .certificate-template p {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+
+  #signature {
+    width: 122px;
+    height: 44px;
+  }
+
+  #logo1 {
+    width: 80px;
+    height: 50px;
+    margin-top: 10px;
+    margin-right: 150px;
+  }
+  #logo2 {
+    width: 50px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  #logo3 {
+    width: 60px;
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 150px;
+  }
+
+  #logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  
+

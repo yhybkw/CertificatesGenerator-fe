@@ -11,6 +11,8 @@ import { ImportListComponent } from './import-list/import-list.component';
 import { CertificateCentreComponent } from './certificate-centre/certificate-centre.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AboutAppComponent } from './about-app/about-app.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     ViewCandidateComponent,
     UpdateCandidateComponent,
     ImportListComponent,
-    CertificateCentreComponent
+    CertificateCentreComponent,
+    AboutAppComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,

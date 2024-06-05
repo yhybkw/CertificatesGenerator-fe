@@ -1,11 +1,11 @@
-<h5>Seems you are looking for details you little meddlesome</h5>
-<h6>All right here are the details of </h6>
-<div class="col-md-3 offset-md-0 rounded-3" style="background-color:rgb(112, 158, 112); padding: 20px;">
-    <div *ngIf="candidate">
-        <label><b>First Name: </b></label> {{ candidate.firstName }}
-    </div>
-    <div>
-        <label><b>Last Name: </b></label> {{ candidate.lastName }}
+<div style="margin-top: 10px;">
+<h5>Seems you are looking for details</h5>
+<h6>All right here is the card of details of {{candidate.firstName}} </h6>
+</div>
+<div class="col-md-4 offset-md-3 rounded-3" style="background-color:rgb(222, 234, 238); padding: 10px;">
+    <h5 class="offset-md-4">Details Card</h5>
+    <div *ngIf="candidate" style="margin-top: 15px;">
+        <label><b>Full Name: </b></label> {{ candidate.firstName }} {{ candidate.lastName }}
     </div>
     <div>
         <label><b>Sex: </b></label> {{ candidate.gender }}
@@ -26,9 +26,9 @@
         <label><b>University: </b></label> {{ candidate.university }}
     </div>
     <div>
-        <label><b>Anapec: </b></label> {{ candidate.anapec }}
+        <label><b>Date: </b></label> {{ candidate.date }}
     </div>
-    <div>
+    <div style="margin-bottom: 15px;">
         <label><b>Type: </b></label> {{ candidate.type }}
     </div>
 </div>

@@ -1,37 +1,52 @@
-<div class="col-md-6 offset-md-3" style="margin-top: 70px;">
+<div class="col-md-6 offset-md-3" style="margin-top: 40px;">
     <h4>Update Member {{candidate.firstName}} informations</h4>
-    <p>*Note: You must fill all fields or they will stay empty</p>
     <form (ngSubmit)="onSubmit3()">
         <div class="form-group">
             <label> First Name</label>
-            <input type="text" class="form-control" id="firstName" 
-            [(ngModel)] = "candidate.firstName" name="firstName">
+            <input type="text" class="form-control" id="firstName" [(ngModel)]="candidate.firstName" name="firstName">
         </div>
         <div class="form-group">
             <label> Last Name</label>
-            <input type="text" class="form-control" id="lastName" 
-            [(ngModel)] = "candidate.lastName" name="lastName">
+            <input type="text" class="form-control" id="lastName" [(ngModel)]="candidate.lastName" name="lastName">
         </div>
         <div class="form-group">
             <label> Email</label>
-            <input type="text" class="form-control" id="email" 
-            [(ngModel)] = "candidate.email" name="email">
+            <input type="text" class="form-control" id="email" [(ngModel)]="candidate.email" name="email">
         </div>
         <div class="form-group">
             <label> City </label>
-            <input type="text" class="form-control" id="city" 
-            [(ngModel)] = "candidate.city" name="city">
+            <input type="text" class="form-control" id="city" [(ngModel)]="candidate.city" name="city">
         </div>
         <div class="form-group">
             <label> Diploma </label>
-            <input type="text" class="form-control" id="diploma" 
-            [(ngModel)]="candidate.diploma" name="diploma">
-          </div>
+            <input type="text" class="form-control" id="diploma" [(ngModel)]="candidate.diploma" name="diploma">
+        </div>
         <div class="form-group">
             <label> University </label>
             <input type="text" class="form-control" id="university" [(ngModel)]="candidate.university"
-              name="university">
-          </div>
-        <button class="btn btn-success " type="submit" style="margin-top: 10px"> Update </button>
+                name="university">
+        </div>
+        <div class="form-group">
+            <label> Gender </label>
+            <!-- <input type="text" class="form-control" id="gender" [(ngModel)]="candidate.gender" name="gender"> -->
+            <select name="gender" class="form-control" id="gender" [(ngModel)]="candidate.gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label> Phone </label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="candidate.phoneNumber" name="phone">
+        </div>
+        <div class="form-group">
+            <label> Formation Type </label>
+            <input type="text" class="form-control" id="type" [(ngModel)]="candidate.type" name="type">
+        </div>
+        <div class="form-group">
+            <label> Date </label>
+            <input type="date" class="form-control" id="date" [(ngModel)]="candidate.date" name="date">
+        </div>
+        <button class="btn btn-success " type="submit" style="margin-top: 10px; margin-bottom: 20px;"> Update </button>
+        <button class="btn btn-outline-danger " (click)="goToCandidateList()" style="margin-top: 10px; margin-bottom: 20px; margin-left: 10px;">Cancel</button>
     </form>
 </div>

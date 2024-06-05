@@ -1,0 +1,14 @@
+/* body {
+    background: url('../../assets/Home.png');
+    background-size: cover;
+
+} */
+
+:host {
+    display: block;
+    height:100vh; /* Full viewport height */
+    background-image: url('../../assets/home2.png');
+    background-size: cover; /* Cover the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+  }
